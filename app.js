@@ -90,10 +90,10 @@ loginForm.addEventListener("submit", function (e) {
 
         currentUser = found.name;
 
-        // ---- FIX OLD POSTS (email → name) ----
+        
         var posts = JSON.parse(localStorage.getItem("posts") || "[]");
         posts.forEach(p => {
-            // ---- FIX OLD POSTS (email → name) ----
+            
             var posts = JSON.parse(localStorage.getItem("posts") || "[]");
             posts.forEach(p => {
                 if (p.username.trim() === found.email.trim()) {
@@ -101,13 +101,13 @@ loginForm.addEventListener("submit", function (e) {
                 }
             });
             localStorage.setItem("posts", JSON.stringify(posts));
-            // --------------------------------------
+            
             {
                 p.username = found.name;
             }
         });
         localStorage.setItem("posts", JSON.stringify(posts));
-        // --------------------------------------
+    
 
         choiceBox.style.display = "none";
         document.querySelector(".login-box").style.display = "none";
